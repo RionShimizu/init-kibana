@@ -3,13 +3,15 @@
 # Provides:          kibana
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
+# chkconfig: 2345 85 15
+# description: kibana.
 # Short-Description: Runs kibana daemon
 # Description: Runs the kibana daemon as a non-root user
 ### END INIT INFO
 
 # Process name
 NAME=kibana
-DESC="Kibana4"
+DESC="Kibana5"
 PROG="/etc/init.d/kibana"
 
 # Configure location of Kibana bin
@@ -84,7 +86,6 @@ case "$1" in
         ;;
   status)
         status -p $PID_FILE $DAEMON
-        RETVAL=$?
         ;;
   restart)
         stop
